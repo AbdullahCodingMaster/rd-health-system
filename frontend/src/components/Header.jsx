@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 // NavigationLink component for link styling and path definition
 const NavigationLink = ({ href, children }) => (
-  <a href={href} className="hover:text-gray-950 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
+  <a href={href} className="hover:text-gray-950 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300">
     {children}
   </a>
 );
@@ -23,15 +23,24 @@ const Header = () => {
 
   // Mobile menu structure
   const MobileMenu = () => (
-    <div className="sm:hidden space-y-2 mt-2 px-2 pb-3">
-      <NavigationLink href="/">Home</NavigationLink>
-      <NavigationLink href="/about">About Us</NavigationLink>
-      <NavigationLink href="/services">Services</NavigationLink>
-      <NavigationLink href="/testimonials">Testimonials</NavigationLink>
-      <NavigationLink href="/contact">Contact Us</NavigationLink>
-      <div className="text-white py-2 px-6 rounded-lg hover:text-black hover:bg-white bg-primary transition-colors duration-300">
-        <a href="/appointment" className="px-4 py-2 rounded-md text-base font-medium">Make An Appointment</a>
-      </div>
+    <div className="sm:hidden fixed inset-0 bg-white shadow-lg z-50 py-4 px-6 space-y-4">
+      <button
+        onClick={toggleMenu}
+        className="text-black hover:text-gray-600 focus:outline-none absolute top-4 right-4"
+        aria-label="Close menu"
+      >
+        <FaTimes className="h-6 w-6" />
+      </button>
+      <nav className="flex flex-col space-y-2">
+        <NavigationLink href="/">Home</NavigationLink>
+        <NavigationLink href="/about">About Us</NavigationLink>
+        <NavigationLink href="/services">Services</NavigationLink>
+        <NavigationLink href="/testimonials">Testimonials</NavigationLink>
+        <NavigationLink href="/contact">Contact Us</NavigationLink>
+        <div className="text-white py-2 px-4 rounded-lg bg-primary hover:bg-opacity-80 transition-colors duration-300">
+          <a href="/appointment" className="block text-center text-base font-medium">Make An Appointment</a>
+        </div>
+      </nav>
     </div>
   );
 
@@ -57,7 +66,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center space-x-4 text-gray-600 font-openSans">
+          <div className="hidden sm:flex sm:items-center sm:justify-center space-x-4 text-gray-600 font-openSans">
             <NavigationLink href="/">Home</NavigationLink>
             <NavigationLink href="/about">About Us</NavigationLink>
             <NavigationLink href="/services">Services</NavigationLink>
@@ -66,7 +75,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Button */}
-          <div className="hidden sm:block flex-shrink-0 text-white py-2 px-6 rounded-lg hover:text-black hover:bg-white bg-primary transition-colors duration-300">
+          <div className="hidden sm:block flex-shrink-0 text-white py-2 px-6 rounded-lg bg-primary hover:bg-opacity-80 transition-colors duration-300">
             <a href="/appointment" className="px-4 py-2 rounded-md text-sm font-medium">Make An Appointment</a>
           </div>
         </div>
