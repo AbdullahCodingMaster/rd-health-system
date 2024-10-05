@@ -6,6 +6,7 @@ import Testimonial from './pages/Testimonial';
 import ContactUs from './pages/ContactUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AboveFooter from './components/AboveFooter';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
+        <AboveFooter/>
         <Footer />
       </div>
     </Router>
