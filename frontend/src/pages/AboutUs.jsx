@@ -79,7 +79,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div class="max-w-6xl mx-auto px-4 py-10 order-b ">
+      <div class="max-w-6xl mx-auto px-4 py-10 order-b mt-20">
         <h2 class="text-3xl font-bold text-center mb-6">Why Choose Us</h2>
         <p class="text-center text-gray-600 mb-10">
           Imperdiet aliquet est vel nulla turpis eu consequat ullamcorper a
