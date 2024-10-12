@@ -1,8 +1,13 @@
+import Hero from "../components/Testimonial/Hero";
+import CallToAction from "./../components/Testimonial/CallToAction";
+import ReviewSection from "./../components/Testimonial/ReviewSection";
+
 const Testimonial = () => {
   return (
     <div>
-      <h1>Testimonials</h1>
-      <p>Read what our clients have to say!</p>
+      <Hero />
+      <ReviewSection />
+      <CallToAction />
     </div>
   );
 };

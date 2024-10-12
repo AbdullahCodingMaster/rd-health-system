@@ -1,3 +1,4 @@
+
 import { FaPlay } from "react-icons/fa";
 
 const Services = () => {
@@ -174,8 +175,4 @@ const Services = () => {
           />
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Services;

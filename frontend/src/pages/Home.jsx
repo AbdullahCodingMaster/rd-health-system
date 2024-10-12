@@ -1,8 +1,13 @@
+import Certifications from "../components/Home/Certifications";
+import Information from "../components/Home/Information";
+import Hero from "../components/Home/Hero";
 const Home = () => {
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>Welcome to the home page!</p>
+    <Hero/>
+    <Certifications/>
+    <Information/>
+   
     </div>
   );
 };
