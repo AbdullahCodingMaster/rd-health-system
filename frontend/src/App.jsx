@@ -5,6 +5,7 @@ import Services from './pages/Services';
 import Testimonial from './pages/Testimonial';
 import ContactUs from './pages/ContactUs';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,8 +13,6 @@ function App() {
       <div>
         {/* Include the Navbar */}
         <Header />
-
-        {/* Define all routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
@@ -21,6 +20,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

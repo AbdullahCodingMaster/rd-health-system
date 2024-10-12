@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import MapComponent from '../components/Map/Map';
 import { FaPhone, FaEnvelope,  FaMapMarkerAlt } from 'react-icons/fa';
+import axios from 'axios';
+
+
 
 const ContactUs = () => {
-  // State for form data
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  // State for errors
+// State for errors
   const [errors, setErrors] = useState({});
 
   // Handle input change
@@ -49,28 +43,38 @@ const ContactUs = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Validate before submission
     if (validate()) {
-      console.log('Form data:', formData);
+        try {
+            const response = await axios.post('http://localhost:8000/contact/api/contact/', formData);
+            console.log('Form data submitted:', response.data);
+            alert('Form submitted successfully!');
 
-      // You can replace the following with actual API submission logic
-      alert('Form submitted successfully!');
-
-      // Clear the form after successful submission
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+            // Clear the form after successful submission
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+        } catch (error) {
+          console.error('There was an error submitting the form!', error.response || error);
+          alert('There was an error submitting the form!');
+        }
     } else {
-      console.log('Validation failed');
+        console.log('Validation failed');
     }
-  };
+};
+  // State for form data
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
   return (
     <div className='bg-[#F7FDFB] px-[200px] pt-0 pb-[104px]'>
