@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'rest_framework_simplejwt',
     'corsheaders',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -135,7 +136,7 @@ USE_I18N = True
 USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React app running on localhost:3000
+    "http://localhost:5173",  # React app running on localhost:3000
 ]
 CORS_ALLOW_ALL_ORIGINS = True 
 # Static files (CSS, JavaScript, Images)
