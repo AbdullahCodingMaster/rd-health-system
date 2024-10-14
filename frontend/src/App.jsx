@@ -11,8 +11,10 @@ import Appointment from './components/UserCredientials/Appointment';
 import Login from './components/UserCredientials/Login';
 import SignUp from './components/UserCredientials/Signup';
 import UserDashboard from './components/UserCredientials/UserDashboard';
+import { AuthProvider } from "./context/AuthContext";
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <div>
         {/* Include the Navbar */}
@@ -36,6 +38,7 @@ function App() {
        
       </div>
     </Router>
+    </AuthProvider>
   );
 }
 

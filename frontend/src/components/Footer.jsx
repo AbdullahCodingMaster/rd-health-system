@@ -1,3 +1,4 @@
+
 const Footer = () => {
   return (
     <footer className="bg-white text-black py-8">
@@ -15,11 +16,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Our Main Services</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Sample Preparations</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Healthcare Labs</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Advanced Microscopy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Chemical Research</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Pathology Testing</a></li>
+              <li><a href="#" className="hover:text-primary">Sample Preparations</a></li>
+              <li><a href="#" className="hover:text-primary">Healthcare Labs</a></li>
+              <li><a href="#" className="hover:text-primary">Advanced Microscopy</a></li>
+              <li><a href="#" className="hover:text-primary">Chemical Research</a></li>
+              <li><a href="#" className="hover:text-primary">Pathology Testing</a></li>
             </ul>
           </div>
 
@@ -27,11 +28,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Useful Links</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">About Our Lab</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Customer Insight</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Free Consultation</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Meet Our Team</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Our Services</a></li>
+              <li><a href="#" className="hover:text-primary">About Our Lab</a></li>
+              <li><a href="#" className="hover:text-primary">Customer Insight</a></li>
+              <li><a href="#" className="hover:text-primary">Free Consultation</a></li>
+              <li><a href="#" className="hover:text-primary">Meet Our Team</a></li>
+              <li><a href="#" className="hover:text-primary">Our Services</a></li>
             </ul>
           </div>
 
@@ -39,10 +40,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Scientific</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Chemistry</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Gemological</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Testimonials</a></li>
+              <li><a href="#" className="hover:text-primary">Chemistry</a></li>
+              <li><a href="#" className="hover:text-primary">Gemological</a></li>
+              <li><a href="#" className="hover:text-primary">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-primary">Testimonials</a></li>
             </ul>
           </div>
         </div>

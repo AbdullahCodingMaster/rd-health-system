@@ -9,7 +9,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("token") || null);
-
+  
   const signup = async (username, email, password, password2) => {
     try {
       const response = await axios.post("http://127.0.0.1:8000/auth/signup/", {
@@ -18,25 +18,43 @@ export const AuthProvider = ({ children }) => {
         password,
         password2,
       });
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
+      if (response.data.token) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+      }
       setUser({ username, email });
+      return response.data; // Return the response for further handling
     } catch (error) {
-      console.error("Signup error:", error);
+      // If there are validation errors from the backend
+      if (error.response && error.response.data.errors) {
+        return error.response.data.errors; // Return errors to be shown in the UI
+      } else {
+        console.error("Signup error:", error);
+        return ["Signup failed!"];
+      }
     }
   };
-
+  
   const login = async (username, password) => {
     try {
       const response = await axios.post("http://127.0.0.1:8000/auth/login/", {
         username,
         password,
       });
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setUser({ username });
+  
+      // Check if response is successful
+      if (response.status === 200) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setUser({ username });
+      } else {
+        // If response is not 200, throw an error
+        throw new Error("Invalid credentials");
+      }
     } catch (error) {
       console.error("Login error:", error);
+      // Throw the error to be handled in the component
+      throw error;
     }
   };
 
@@ -47,12 +65,12 @@ export const AuthProvider = ({ children }) => {
           Authorization: `Token ${token}`,
         },
       });
-      setToken(null);
-      setUser(null);
-      localStorage.removeItem("token");
     } catch (error) {
       console.error("Logout error:", error);
     }
+    setToken(null);
+    setUser(null);
+    localStorage.removeItem("token");
   };
 
   return (
@@ -61,3 +79,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+
